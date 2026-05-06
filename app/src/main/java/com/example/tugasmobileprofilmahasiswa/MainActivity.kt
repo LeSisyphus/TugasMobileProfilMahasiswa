@@ -14,7 +14,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Star
@@ -28,6 +27,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.tugasmobileprofilmahasiswa.ui.theme.*
@@ -117,19 +117,20 @@ fun ProfilScreen(lifecycleStatus: String) {
             ) {
 
                 Image(
-                    painter = painterResource(id = R.mipmap.ic_launcher_round),
+                    painter = painterResource(id = R.drawable.img),
                     contentDescription = "Foto Mahasiswa",
-                    contentScale = ContentScale.Crop,
+                    contentScale = ContentScale.FillHeight,
+                    alignment = Alignment.TopCenter,
                     modifier = Modifier
-                        .size(100.dp)
+                        .size(200.dp)
                         .clip(CircleShape)
-                        .border(3.dp, Primary, CircleShape)
+                        .border(3.dp, BorderDark, CircleShape)
                 )
 
                 Spacer(modifier = Modifier.height(12.dp))
 
                 Text(
-                    text = "Muhammad Maulana",
+                    text = "Muhammad Maulana Azhari",
                     fontSize = 22.sp,
                     fontWeight = FontWeight.Bold,
                     color = Primary
@@ -149,7 +150,7 @@ fun ProfilScreen(lifecycleStatus: String) {
                     )
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(
-                        text = "2310101234",
+                        text = "2410817210003",
                         fontSize = 14.sp,
                         color = TextSecondary
                     )
@@ -169,7 +170,7 @@ fun ProfilScreen(lifecycleStatus: String) {
                     )
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(
-                        text = "Teknik Informatika",
+                        text = "Teknologi Informasi",
                         fontSize = 14.sp,
                         color = TextSecondary
                     )
@@ -203,15 +204,8 @@ fun ProfilScreen(lifecycleStatus: String) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(
-                    color = LifecycleBg,
-                    shape = RoundedCornerShape(8.dp)
-                )
-                .border(
-                    width = 1.dp,
-                    color = Accent,
-                    shape = RoundedCornerShape(8.dp)
-                )
+                .background(color = LifecycleBg, shape = RoundedCornerShape(8.dp))
+                .border(width = 1.dp, color = Accent, shape = RoundedCornerShape(8.dp))
                 .padding(16.dp)
         ) {
             Column {
@@ -266,5 +260,13 @@ fun ProfilScreen(lifecycleStatus: String) {
                 color = Color.White
             )
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ProfilScreenPreview() {
+    ProfilMahasiswaTheme {
+        ProfilScreen(lifecycleStatus = "onResume()")
     }
 }

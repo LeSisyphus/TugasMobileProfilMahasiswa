@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -21,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.tugasmobileprofilmahasiswa.ui.theme.*
@@ -70,7 +70,7 @@ fun DetailScreen(onBack: () -> Unit) {
                 Spacer(modifier = Modifier.height(12.dp))
                 DetailRow(icon = Icons.Filled.Star, label = "Universitas", value = "Universitas Lambung Mangkurat")
                 DetailRow(icon = Icons.Filled.Star, label = "Fakultas", value = "Teknik")
-                DetailRow(icon = Icons.Filled.Person, label = "Angkatan", value = "2023")
+                DetailRow(icon = Icons.Filled.Person, label = "Angkatan", value = "2024")
                 DetailRow(icon = Icons.Filled.Person, label = "Status", value = "Aktif")
             }
         }
@@ -89,7 +89,7 @@ fun DetailScreen(onBack: () -> Unit) {
                     color = Primary
                 )
                 Spacer(modifier = Modifier.height(12.dp))
-                DetailRow(icon = Icons.Filled.Email, label = "Email", value = "maulana@example.com")
+                DetailRow(icon = Icons.Filled.Email, label = "Email", value = "maulana@gmail.com")
             }
         }
 
@@ -138,5 +138,13 @@ fun DetailRow(icon: ImageVector, label: String, value: String) {
             Text(text = label, fontSize = 12.sp, color = TextSecondary)
             Text(text = value, fontSize = 14.sp, color = TextPrimary, fontWeight = FontWeight.Medium)
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DetailScreenPreview() {
+    ProfilMahasiswaTheme {
+        DetailScreen(onBack = {})
     }
 }
