@@ -17,7 +17,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.School
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -30,7 +30,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.profilmahasiswa.ui.theme.*
+import com.example.tugasmobileprofilmahasiswa.ui.theme.*
 
 class MainActivity : ComponentActivity() {
 
@@ -103,7 +103,6 @@ fun ProfilScreen(lifecycleStatus: String) {
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
 
-        // ── Card Profil ──
         Card(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(16.dp),
@@ -117,7 +116,6 @@ fun ProfilScreen(lifecycleStatus: String) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
 
-                // Foto Avatar — ImageView (Graphic 1)
                 Image(
                     painter = painterResource(id = R.mipmap.ic_launcher_round),
                     contentDescription = "Foto Mahasiswa",
@@ -130,7 +128,6 @@ fun ProfilScreen(lifecycleStatus: String) {
 
                 Spacer(modifier = Modifier.height(12.dp))
 
-                // Nama — style TitleStyle
                 Text(
                     text = "Muhammad Maulana",
                     fontSize = 22.sp,
@@ -140,7 +137,6 @@ fun ProfilScreen(lifecycleStatus: String) {
 
                 Spacer(modifier = Modifier.height(6.dp))
 
-                // NIM — pakai Vector Icon (Graphic 2)
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center
@@ -161,13 +157,12 @@ fun ProfilScreen(lifecycleStatus: String) {
 
                 Spacer(modifier = Modifier.height(4.dp))
 
-                // Program Studi — Vector Icon
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center
                 ) {
                     Icon(
-                        imageVector = Icons.Filled.School,
+                        imageVector = Icons.Filled.Star,
                         contentDescription = "Prodi",
                         tint = TextSecondary,
                         modifier = Modifier.size(16.dp)
@@ -182,7 +177,6 @@ fun ProfilScreen(lifecycleStatus: String) {
             }
         }
 
-        // ── Card Deskripsi ──
         Card(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(16.dp),
@@ -206,7 +200,6 @@ fun ProfilScreen(lifecycleStatus: String) {
             }
         }
 
-        // ── Panel Status Lifecycle — Shape Drawable (Graphic 3) ──
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -249,7 +242,6 @@ fun ProfilScreen(lifecycleStatus: String) {
 
         Spacer(modifier = Modifier.height(4.dp))
 
-        // ── Tombol ke DetailActivity — style ButtonStyle ──
         Button(
             onClick = {
                 val intent = Intent(context, DetailActivity::class.java)

@@ -1,4 +1,4 @@
-package com.example.tugasmobilekeprofilmahasiswa
+package com.example.tugasmobileprofilmahasiswa
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -13,7 +13,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.School
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -23,7 +23,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.profilmahasiswa.ui.theme.*
+import com.example.tugasmobileprofilmahasiswa.ui.theme.*
 
 class DetailActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +47,6 @@ fun DetailScreen(onBack: () -> Unit) {
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
 
-        // Header
         Text(
             text = "Detail Mahasiswa",
             fontSize = 22.sp,
@@ -55,7 +54,6 @@ fun DetailScreen(onBack: () -> Unit) {
             color = Primary
         )
 
-        // ── Card Info Akademik ──
         Card(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(16.dp),
@@ -70,14 +68,13 @@ fun DetailScreen(onBack: () -> Unit) {
                     color = Primary
                 )
                 Spacer(modifier = Modifier.height(12.dp))
-                DetailRow(icon = Icons.Filled.School, label = "Universitas", value = "Universitas Lambung Mangkurat")
-                DetailRow(icon = Icons.Filled.School, label = "Fakultas", value = "Teknik")
+                DetailRow(icon = Icons.Filled.Star, label = "Universitas", value = "Universitas Lambung Mangkurat")
+                DetailRow(icon = Icons.Filled.Star, label = "Fakultas", value = "Teknik")
                 DetailRow(icon = Icons.Filled.Person, label = "Angkatan", value = "2023")
                 DetailRow(icon = Icons.Filled.Person, label = "Status", value = "Aktif")
             }
         }
 
-        // ── Card Kontak ──
         Card(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(16.dp),
@@ -98,7 +95,6 @@ fun DetailScreen(onBack: () -> Unit) {
 
         Spacer(modifier = Modifier.height(4.dp))
 
-        // ── Tombol Kembali ──
         Button(
             onClick = onBack,
             modifier = Modifier
